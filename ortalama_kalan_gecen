@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*
+Klavyeden öğrenci sayısı (en fazla 100) ve ders geçme notunu alarak bu bilgileri tanımlanacak “hesapla” fonksiyonuna
+gönderen bir “main” fonksiyonu hazırlayınız. “hesapla” fonksiyonu kendisine gelen öğrenci sayısı kadar notu klavyeden
+okuyarak 100 elemanlı bir diziye kaydetmeli ve geçme notuna göre kaç tane öğrencinin dersten kaldığını bularak
+fonksiyondan geri döndürürken, sınıf ortalamasını da ekrana yazdırmalıdır. Buna göre aşağıda verilen alanlara “main” ve
+“hesapla” fonksiyonlarını yazınız
+
+/*
+int hesapla(notu)
+{
+	int i,po,k,z,j;
+	int ort=0;
+	int kalan[99];
+	int gec[99];
+	int dizi[99];
+	for(i=0;i<notu;i++)
+		{
+		printf("Öğrenci Notu giriniz :");
+		scanf("%d",&po);
+		dizi[i] = po;
+		ort = ort+po;
+		}
+	printf("Dizi Elemanlari:");
+	for(j=0;j<notu;j++){
+	
+		printf("[%d]",dizi[j]);
+	}
+	printf("\n");
+	printf("Kalan Elemanlar :");
+	for(k=0;k<notu;k++)
+	 {
+	 	if(dizi[k]<50){
+	 		printf("%d ",kalan[k]= dizi[k]);
+		 }
+	 }
+	 printf("\n");
+	 printf("Gecen Elemanlar :");
+	 for(k=0;k<notu;k++)
+	 {
+	 	if(dizi[k]>50){
+	 		
+	 		printf("%d ",gec[k]= dizi[k]);
+		 }
+	 }
+	 
+	printf("\n");
+	printf("Sinif Ortalama : %d ",ort/notu);
+}
+
+
+
+int main() {
+	int sgr,j;
+	int dizi[99];
+	
+	
+	printf("Ögrenci sayisini giriniz : ");
+	scanf("%d",&sgr);
+	hesapla(sgr);
+	
+	return 0;
+}
