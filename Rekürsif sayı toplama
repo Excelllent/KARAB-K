@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int sum(int say){
+	
+	if(1==say){
+		return say;
+	}
+	else
+		return (say + sum(say -1));
+}
+
+
+int main(){
+
+ 	int sayi;
+ 	
+ 	printf("Sayi giriniz : ");
+ 	scanf("%d",&sayi);
+	printf("%d",sum(sayi));
+    return 0;
+
+}
