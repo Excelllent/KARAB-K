@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+//basite indirdimm...
+int mod(int num)
+{
+	
+	if(num!=0){
+		return(num % 10 + mod(num/10));
+	}
+	else{
+		return 0;
+	}
+}
+
+
+
+int main(){
+	int temp;
+    temp = mod(153);
+    printf("%d",temp);
+    return 0;
+
+}
