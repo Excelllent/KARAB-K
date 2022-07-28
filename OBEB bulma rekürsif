@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* mantık basit önce eşitlerse zaten en büyük bölenleri belli ,
+   eşit olmadığı durumlarda durumu tekrar tekrar fonk göndererek eşit olana kadar birbirinden çıkarma ... 
+
+int obeb(int x,int y){
+	
+	if(x==y){
+		return x;
+		
+	}
+	else if(x>y){
+		
+		return obeb( x -y,y);
+		
+	}
+	
+	return obeb(x,y-x);
+	
+	
+	
+}
+
+
+
+int main(){
+	int n,n1,tut;
+	printf("Sayilari Giriniz :");
+	scanf("%d",&n);
+	scanf("%d",&n1);
+	tut=obeb(n,n1);
+	
+	printf("%d",tut);
+	
+	
+    return 0;
+
+}
