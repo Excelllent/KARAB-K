@@ -1,0 +1,26 @@
+#include <stdio.h>
+int Bsayi(int dizi[], int x) {
+
+    if(x==1) {
+
+        return dizi[0];
+
+    }
+    else {
+
+        int tut=Bsayi(dizi, x-1);
+       // 4-3-2-1-0
+        if (dizi[x-1] > tut){
+            return dizi[x-1];
+        }
+        return tut;
+
+    }
+
+}
+int main()
+{
+    int dizi[5] = {5,15,95,45,56};
+    printf("%d", Bsayi(dizi, 4));
+
+}
