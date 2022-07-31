@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int fakt(int n){
+
+
+
+    if(n==1){
+        return n;
+    }
+    else{
+        return n*fakt(n-1);
+    }
+}
+
+
+int main()
+{
+    int f;
+    printf("Faktöriyel hesaplamak için sayi girin");
+    scanf("%d",&f);
+
+    printf("Hesap : %d",fakt(f));
+
+
+
+}
