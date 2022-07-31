@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int dizieleman(int a[], int i, int x) {
+    
+    if(i == x){
+        
+        return a[i];
+    }
+    else{
+        printf("%d ", a[i]);
+        
+        dizieleman(a, i + 1, x);
+    }
+}
+
+
+
+int main() {
+    int x;
+    int dizi[x];
+    
+    printf("Dizinin eleman sayısını giriniz :");
+    scanf("%d", &x);
+    
+    for(int i = 0; i < x; i++){
+        printf("dizinin %d elemanini giriniz: ", i + 1);
+        
+        scanf("%d", &dizi[i]);
+    }
+    dizieleman(dizi, 0, x);
+    
+    return 0;
+}
