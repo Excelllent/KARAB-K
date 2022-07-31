@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int sayi(int n){
+
+    if(1 <= n)
+    {
+        sayi(n-1);
+        printf(" %d ",n);
+    }
+}
+int main()
+{
+    int f;
+    printf("Hangi sayiya kadar yazdırmak istiyosanız");
+    scanf("%d",&f);
+    printf("%d",sayi(f));
+
+
+
+}
