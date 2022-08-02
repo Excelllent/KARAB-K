@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+
+void ters(char *cev)//FIRAT
+{
+    if (*cev)//FIRAT
+    {
+        printf("%c", *cev);//DÜZ AYNSINI YAZDIRIR
+        ters(cev+1);//FIRAT -I+F //FIRAT-R -I-F//FIRAT -A-R-I-F//FIRAT T-A-R-I-F
+        printf("%c", *cev);//T-A-R-I-F - TERSİNİ YAZDIRIR
+        //5-4-3-2-1
+        //1-2-3-4-5
+
+    }
+}
+
+
+int main()
+{
+    char dizi[256];
+    printf("Kelime giriniz : ");
+    scanf("%s",&dizi);
+    ters(dizi);
+    return 0;
+}
