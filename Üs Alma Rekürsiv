@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int us(int ustu,int sayi)
+{
+    if(ustu==0){
+        return 1;
+    }
+    else{
+        return sayi*us(ustu-1,sayi);
+    }
+}
+
+int main()
+{
+    int ustu,sayi;
+    printf("Üssünü alıcağımız sayı  Sayiyi Giriniz : ");
+    scanf("%d",&sayi);
+    printf("Ussu Giriniz :");
+    scanf("%d",&ustu);
+    printf("Ussu= %d dir.",us(ustu,sayi));
+    
+    return 0;
+}
