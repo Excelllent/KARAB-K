@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int tek(int *dizi,int n){
+    if(n<0){
+        return 0;
+    }
+    else{
+        if(dizi[n]%2==1){
+
+            return 1+tek(dizi,n-1);
+        }
+        else{
+            return tek(dizi,n-1);
+        }
+    }
+}
+
+int main()
+{
+
+    int sayi[5];
+    printf("Dizi Elemanlarını giriniz : ");
+    for (int i = 0; i <5 ; ++i) {
+        scanf("%d",&sayi[i]);
+
+    }
+    printf("TEK SAYI ADEDİ : %d", tek(sayi,5));
+
+    return 0;
+}
