@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int obeb(int x,int y){
+
+    if(x==y){
+        return x;
+
+    }
+    else if(x>y){
+
+        return obeb( x -y,y);
+
+    }
+
+    return obeb(x,y-x);
+
+
+
+}
+int okek(int x,int y){
+
+    return x*y/ obeb(x,y);
+
+}
+
+
+
+int main(){
+    int n,n1,tut;
+    printf("Sayilari Giriniz :");
+    scanf("%d",&n);
+    scanf("%d",&n1);
+    tut=obeb(n,n1);
+
+    printf("OBEB : %d",tut);
+    printf("\n");
+    printf("OKEK : %d", okek(n,n1));
+
+    return 0;
+
+}
