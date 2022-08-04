@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int sayi(int a,int b){//70-30
+    if(a > b){
+        printf("%d ",a);
+        sayi(a-1,b);
+    }
+    else if(b > a){
+        printf("%d",b);
+        sayi(a,b-1);
+    }
+    
+}
+
+
+
+int main(){
+	int n,n1,tut;
+	printf("Sayilari Giriniz :");
+	scanf("%d",&n);
+	scanf("%d",&n1);
+
+    printf("%d", sayi(n,n1));
+
+    return 0;
+}
