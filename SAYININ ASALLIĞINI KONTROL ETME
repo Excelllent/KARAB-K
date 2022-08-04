@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Girilen sayının asal olup olmadığını kontrol etme
+
+// 7 girdik diyelim n olan yere de 7 nin yarısını gönderiyoruz ki yarısına modunu alınca 0-1 durumuna göre asallığını bulur
+int asal(int sayi,int n){
+    if(n != 1){//3 gelicek
+        if(sayi %n != 0){//burda 7%3 alıcak 1 olduğu için fonksiyon çalışıcak yazdırıcak
+            return asal(sayi,n-1);
+        }
+        else{// burda 8 gibi çift sayılar girilirse boş döndürücek
+            return 0;
+        }
+    }
+    else//
+        return 1;
+}
+
+int main(){
+
+    int num;
+    printf("Sayı giriniz :");
+    scanf("%d",&num);
+    if(asal(num,num/2)==1){
+        printf("ASAL SAYI");
+    }
+    else
+        printf("ASAL DEĞİLDİR");
+    return 0;
+
+}
