@@ -119,7 +119,7 @@ int main(){
     //printf("%d",elm);
 
     */
-
+    /*
     int j,k;
     int i[10];
     int *iptr;
@@ -142,7 +142,7 @@ int main(){
        // printf("\n%d",*(iptr+j));
     }
     //printf("\n%d",*iptr);
-
+    */
 
 
 
