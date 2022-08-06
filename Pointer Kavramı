@@ -7,15 +7,16 @@ int main(){
     //Pointer Tanımlama
     /*
     int i;
-    int *iptr;
+    int *ptr;
     i=5;
-    iptr=&i;
+    ptr=&i;
+
 
     printf("i adresi %p\n",&i);
-    printf("iptr adresi %p\n",iptr);
+    printf("iptr adresi %p\n",ptr);
 
     printf("i degeri %d \n",i);
-    printf("*iptr degeri %d\n",*iptr);
+    printf("*iptr degeri %d\n",*ptr);
     */
     //********************************************************************
     //Değişkene pointer aracılığıyla erişme
@@ -39,10 +40,11 @@ int main(){
     k=*p;
     */
     //********************************************************************
+    //değer tanımlama
     /*
     int x,y,z;
     int *tut;
-    x=15;
+    x=15;//25000
     y=3;
     tut=&x;//burda adresleri aynı yapıyoruz
     z=*tut;//burda pointerın içeriğini z ye eşitliyoruz
@@ -92,6 +94,61 @@ int main(){
     *(ptr+4); // dizinin 4.indisindeki elemanı dizi[4]; diyebiliriz
     ptr[4];//bir değişik gösterim
      */
+    //*********************************************************************
+    //örnekler
+    /*
+    int elm;
+    int month[8]={1, 2, 3, 4, 5, 6, 7, 8};
+    int *ptr;
+
+    ptr = month;
+    elm = ptr[3];
+    //printf("%d",elm);
+    ptr = month + 3;
+    //printf("%d",ptr);//ptr adresini gösterir
+    ptr = &month[3];
+    //printf("%d",ptr);
+    elm =(ptr+2)[2];//ptr üstte 3.indekste burda 4 indeks artırıyor...
+    //printf("%d",elm);
+    elm=*(month + 3);
+    //printf("%d",elm);
+    ptr=month;
+    elm=*(ptr+2);
+    //printf("%d",elm);
+    elm =*(month+1);
+    //printf("%d",elm);
+
+    */
+
+    int j,k;
+    int i[10];
+    int *iptr;
+    for (int j = 0; j <10 ; j++) {
+        i[j]=j;
+
+    }
+    iptr=i;
+    for (int j = 0; j <10 ; j++) {
+        printf("%d",*iptr);
+        iptr++;
+        //printf("%d\n",*iptr);
+    //0-1-2-3-4-5-6-7-8-9
+    }
+    //iptr[10]
+    printf("%d",j);
+   // printf("\n%d\n",*(iptr-1));
+    iptr=i;
+    for (int j = 0; j <10 ; j++) {
+       // printf("\n%d",*(iptr+j));
+    }
+    //printf("\n%d",*iptr);
+
+
+
+
+
+
+
     return 0;
 
 }
