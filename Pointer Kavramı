@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main(){
+    //Pointer Tanımlama
+    /*
+    int i;
+    int *iptr;
+    i=5;
+    iptr=&i;
+
+    printf("i adresi %p\n",&i);
+    printf("iptr adresi %p\n",iptr);
+
+    printf("i degeri %d \n",i);
+    printf("*iptr degeri %d\n",*iptr);
+    */
+    //********************************************************************
+    //Değişkene pointer aracılığıyla erişme
+    /*
+    int i;
+    int *iptr;
+    iptr=&i;
+    *iptr=8;
+
+    printf("i degesikeninin degeri :%d\n",i);
+    printf("iptr adresinin içeriği %d\n",*iptr);
+    */
+    //********************************************************************
+    //Değişkenleri pointerla ilişkilendirme
+    /*
+    int xyz=10,k;
+    int *p;
+
+    p=&xyz;
+
+    k=*p;
+    */
+    //********************************************************************
+    /*
+    int x,y,z;
+    int *tut;
+    x=15;
+    y=3;
+    tut=&x;//burda adresleri aynı yapıyoruz
+    z=*tut;//burda pointerın içeriğini z ye eşitliyoruz
+    printf("z :%d\n",z);
+    tut=&y;//burda adresini değiştirip y nin adresine çevirmiş gibi yapıyoruz
+    z=*tut;//aynı şekilde burda pointer içeriği z nin yeni değeri oluyor
+    printf("z:%d",z);
+    */
+    //******************************************************************
+    //Pointer Boyutu
+    /*
+    double i;
+    double *iptr;
+    iptr=&i;
+
+    printf("i boyutu %d\n",sizeof(i));
+    printf("iptr boyutu %d\n",sizeof(iptr));
+    */
+    //******************************************************************
+    //Pointer Aritmetiği
+        /*int i,*iptr;
+        iptr=&i;
+        iptr +=2;//bu işlem adres değerini 2 *4 byte kaydırıyor
+
+        */
+    /*
+    int i,*iptr;
+    double y,*yptr;
+    iptr =&i;
+    printf("iptr gösterdiği adres :%d\n",iptr);
+    iptr++;//burda iptr adresini 4 byte ileri attırır int 4 byte
+    printf("iptr gösterdiği adres :%d\n",iptr);
+
+    yptr=&y;
+    printf("yptr gösterdiği adres:%d\n",yptr);
+    yptr++;//burda yptr adresini 8 byte ileri arttırır double 8 byte
+    printf("yptr gösterdiği adres:%d\n",yptr);
+    */
+    //******************************************************************
+    //Dizi ile pointer ilişkisi
+    /*
+    int dizi[6];
+    int *ptr;
+    //dizi ile pointer aslında mantıken aynıdır dizi ilk elaman tutar aynı mantık
+    ptr=dizi;//artık ptr[0]=&dizi[0] diyebiliriz
+    *(ptr+n);//demek dizinin n.indisini gösterir
+    *(ptr+4); // dizinin 4.indisindeki elemanı dizi[4]; diyebiliriz
+    ptr[4];//bir değişik gösterim
+     */
+    return 0;
+
+}
