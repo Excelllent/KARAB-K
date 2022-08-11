@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *birlestir(int[],int,int[],int);
+int *sırala(int dizi3[],int n);
+int main() {
+    int i;
+    int liste1[5]={5,4,3,2,1};
+    int liste2[7]={13,12,11,10,9,8,7};
+
+    int *p,*p1;
+    p=birlestir(liste1,5,liste2,7);
+    p1=sırala(p,12);
+    printf("Siralanmis dizi :");
+    for (int i = 0; i < 12; i++) {
+        printf("%d,",p[i]);
+
+    }
+
+    return 0;
+}
+
+int *birlestir(int dizi1[],int boyut1,int dizi2[],int boyut2) {
+
+    int *sonuc = (int *) calloc(boyut1 + boyut2, sizeof(int));
+    int i, k, j,z;
+    int temp;
+    for (int i = 0; i < boyut1; i++) {
+        sonuc[i] = dizi1[i];
+
+    }
+
+    for (int k = 0, i = boyut1; k < boyut2; i++, k++) {
+        sonuc[i] = dizi2[k];
+
+    }
+
+    return sonuc;
+}
+
+int *sırala(int dizi3[],int n){
+    int i,j,temp;
+    for (i = 1; i < n; i++)
+    {
+        j = i;
+        while (j > 0 && dizi3[j - 1] > dizi3[j])
+        {
+            temp = dizi3[j];
+            dizi3[j] = dizi3[j - 1];
+            dizi3[j - 1] = temp;
+            j--;
+        }
+//        for (int j;j > 0 && dizi3[j - 1] > dizi3[j]; j--) {
+//            temp = dizi3[j];
+//            dizi3[j] = dizi3[j - 1];
+//            dizi3[j - 1] = temp;
+//
+//        }
+   }
+}
