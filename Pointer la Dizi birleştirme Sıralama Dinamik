@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *birlestir(int *dizi1, int boyt_1, int *dizi2, int boyt_2);
+int *sirala(int *dizi3,int n);
+int main() {
+    int i,boyut1,boyut2,k,z;
+    int *liste1;
+    int *liste2;
+    int *p;
+    int *p1;
+
+    printf("Liste 1 ve Liste 2 boyut girinboyut girin:");
+    scanf("%d",&boyut1);
+    scanf("%d",&boyut2);
+
+    liste1=(int *) malloc(boyut1*sizeof(int));
+
+    liste2=(int *) malloc(boyut2*sizeof(int));
+
+    printf("Liste 1 Elamanlarını giriniz\n");
+    for(k = 0; k < boyut1; k++) {
+        scanf("%d",&liste1[k]);
+    }
+    printf("Liste 2 Elamanlarını giriniz\n");
+    for(z = 0; z < boyut2; z++) {
+        scanf("%d",&liste2[z]);
+    }
+
+
+    p=birlestir(liste1,boyut1,liste2,boyut2);
+    p1=sirala(p,boyut1+boyut2);
+    printf("Siralanmis dizi :");
+    for (i = 0; i < boyut1+boyut2; i++) {
+        printf("%d,",p[i]);
+
+    }
+
+
+    return 0;
+}
+
+int *birlestir(int *dizi1, int boyt_1, int *dizi2, int boyt_2) {
+    int i,k;
+    int *sonuc = (int *) calloc(boyt_1 + boyt_2, sizeof(int));
+
+    for (i = 0; i < boyt_1; i++) {
+        sonuc[i] = dizi1[i];
+
+    }
+
+    for (k = 0, i = boyt_1; k < boyt_2; i++, k++) {
+        sonuc[i] = dizi2[k];
+
+    }
+
+    return sonuc;
+}
+
+int *sirala(int *dizi3,int n){
+    int i,j,temp;
+    for (i = 1; i < n; i++)
+    {
+        j = i;
+        while (j > 0 && dizi3[j - 1] > dizi3[j])
+        {
+            temp = dizi3[j];
+            dizi3[j] = dizi3[j - 1];
+            dizi3[j - 1] = temp;
+            j--;
+        }
+    }
+    return 0;
+}
