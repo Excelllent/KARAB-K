@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include "string.h"
+#include <stdlib.h>
+#include <conio.h>
+void binary(unsigned a){
+    int i=1,k;
+    unsigned *p;
+    p=&a;
+    while (1){
+        *(p+i)=a%2;
+        a=a/2;
+        if(a==1){
+            *(p+i+1)=a;
+            break;
+        }
+        i++;
+    }
+    for (int k =i+1; k >0 ; k--) {
+        printf("%u",*(p+k));
+
+    }
+}
+int main() {
+    unsigned s;
+    printf("Numara giriniz:");
+    scanf("%d",&s);
+    binary(s);
+    return 0;
+}
