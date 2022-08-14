@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include "string.h"
+#include <stdlib.h>
+int uzun(char *t){
+    int z=0;
+    while (*t !='\0'){
+        z++;
+        t++;
+    }
+    return z;
+}
+int main() {
+    char str[100];
+    printf("Cümle giriniz");
+    gets(str);
+
+    printf("%d",uzun(str));
+    return 0;
+}
