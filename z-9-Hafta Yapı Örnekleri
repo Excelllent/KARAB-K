@@ -1,0 +1,216 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+
+/*
+int main()
+{
+//    enum boolean{
+//        false=0,
+//        true=1
+//    };
+//    enum boolean isTrue;
+//    scanf("%d",&isTrue);
+//
+//    if(isTrue==true){
+//        printf("True\n");
+//    }
+
+
+
+//////////////////////////////////////////////////////////////////
+
+
+//    enum mainColors{
+//        red,
+//        blue,
+//        yellow
+//    };
+//    enum mainColors pixel;
+//    pixel=blue;
+//    if(pixel=red)
+//        printf("Red pixel\n");
+//    else if(pixel=blue)
+//        printf("Blue pixel\n");
+//    else
+//        printf("Yellow pixel}n");
+
+//////////////////////////////////////////////////////////////////
+
+
+    return 0;
+}
+*/
+////////////////////////////////////////////////////////////////////
+
+//enum state{work=1,Failed=0,Freezed=0};
+//int main(){
+//    printf("%d,%d,%d",work,Failed,Freezed);
+//    return 0;
+//}
+//YAPILAR
+
+//int main(){
+//    struct pep{
+//        int year;
+//        int month;
+//        int day
+//    };
+//
+//
+//    struct pep birth_day;
+//    printf("Enter your bith day");
+//    printf(" in MM-DD-YYYY");
+//    scanf("%d-%d-%d",&birth_day.year,&birth_day.month,&birth_day.day);
+//    printf("Your birth day");
+//    printf("%d/%d/%d\n",birth_day.year,birth_day.month,birth_day.day);
+//
+//    return 0;
+//}
+///////////////////////////////////////////////////////////
+//int main(){
+//    struct{
+//        char name[40];
+//        int lenght;
+//        struct {
+//            int year;
+//            int month;
+//            int day;
+//        }bornInfomation;
+//    }person;
+//    printf("Your name:");
+//    scanf("%s",&person.name);
+//    printf("Your lenght");
+//    scanf("%d",&person.lenght);
+//    printf("Your bithday");
+//    scanf("%d-%d-%d",&person.bornInfomation.day,
+//          &person.bornInfomation.month,
+//          &person.bornInfomation.year);
+//    printf("Entered İnformation:\n");
+//    printf("Name :%s\n",person.name);
+//    printf("Lenght:%d\n",person.lenght);
+//    printf("Birth day: %d/%d/%d",person.bornInfomation.day,
+//           person.bornInfomation.month,
+//           person.bornInfomation.year);
+//
+//    return 0;
+//}
+//////////////////////////////////////////////////////////////////
+//int main(){
+//    typedef struct person_data{
+//        char name[40];
+//        int length;
+//    };
+//    struct person_data person1;
+//    struct person_data person2;
+//
+//    strcpy(person1.name,"Fırat");
+//    person1.length=170;
+//
+//    strcpy(person2.name,"Hasan");
+//    person2.length=185;
+//
+//    printf("Name:\n");
+//    printf("%s/%s\n",person1.name,
+//           person2.name);
+//
+//    printf("Lenght:\n");
+//    printf("%d/%d",person1.length,
+//           person2.length);
+//
+//    return 0;
+//
+//}
+//////////////////////////////////////////////////////////////
+//int main() {
+//    int i;
+//    struct birthday{
+//        int day;
+//        int month;
+//        int year;
+//
+//    };
+//    struct person_data{
+//        char name[40];
+//        int lenght;
+//
+//        struct birthday date;
+//    };
+//
+//    struct person_data person[3]={"Ali",170,{17,2,2000},
+//            "veli",178,{14,4,1980},
+//            "Cenk",176,{4,11,1652}};
+//
+//
+//    for (int i = 0; i < 3; ++i) {
+//        printf("Kayıt no:%d\n",(i+1));
+//        printf("Name: %s\n",person[i].name);
+//        printf("Length: %d\n",person[i].lenght);
+//        printf("Birth Date:%d/%d/%d\n",person[i].date.day,
+//               person[i].date.month,
+//               person[i].date.year);
+//
+//    }
+//}
+/////////////////////////////////////////////////////////////
+//int main() {
+//    int i;
+//
+//    struct birthday{
+//        int day;
+//        int month;
+//        int year;
+//
+//    };
+//    struct person_data{
+//        char name[40];
+//        int lenght;
+//
+//        struct birthday date;
+//    };
+//    struct person_data *ptr;
+//    struct person_data person[3]={"Ali",170,{17,2,2000},
+//                                  "veli",178,{14,4,1980},
+//                                  "Cenk",176,{4,11,1652}};
+//
+//
+//    for ( i = 0,ptr=&person[0]; ptr <=&person[2];ptr++, ++i) {
+//        printf("Kayıt no:%d\n",(i+1));
+//        printf("Name: %s\n",ptr->name);
+//        printf("Length: %d\n",ptr->lenght);
+//        printf("Birth Date:%d/%d/%d\n",ptr->date.day,
+//               ptr->date.month,
+//               ptr->date.year);
+//
+//    }
+//    return 0;
+//}
+/////////////////////////////////////////////////////////////////
+//typedef struct person_data{
+//    char name[40];
+//    int length;
+//};
+//struct person_data getPersondata(void);
+//void showPersondata(struct person_data person);
+//
+//int main(){
+//    struct person_data person;
+//    person=getPersondata();
+//    showPersondata(person);
+//    return 0;
+//}
+//struct person_data getPersondata(void){
+//    struct person_data person;
+//    printf("Name->");
+//    gets(person.name);
+//    printf("Length-> " );
+//    scanf("%d",&person.length);
+//    return person;
+//}
+//void showPersondata(struct person_data person){
+//    printf("Name:%s\n",person.name);
+//    printf("Length:%d\n",person.length);
+//}
+///////////////////////////////////////////////////////////////////
