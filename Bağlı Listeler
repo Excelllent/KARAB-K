@@ -1,0 +1,135 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct node {
+    int number;
+    struct node * next;
+};
+
+typedef struct node node1;
+
+
+node1 *head,*newnode;
+
+node1 * createList(){
+    int k,i;
+    node1 *head,*p;
+    printf("Kaç elemanlı olsun :");
+    scanf("%d",&k);
+
+    for (int i = 0; i < k; i++) {
+        if(i==0){
+            head= (node1 *)malloc(sizeof(node1));
+            p=head;
+        }
+        else{
+            p->next=(node1 *) malloc(sizeof(node1));
+            p=p->next;
+        }
+        printf("Number:");
+        scanf("%d",&p->number);
+
+    }
+    p->next=NULL;
+    return head;
+}
+node1 *traverse(node1 *head ){
+    node1 *p;
+    p=head;
+
+    while (p !=NULL){
+        printf("%d ",p->number);
+        p=p->next;
+    }
+
+}
+node1 *adnode(node1 *head){
+    int stdno;
+    node1 *p,*q;
+    node1 *newnode=(node1 *) malloc(sizeof(node1));
+    printf("No girinz\n");scanf("%d",&newnode->number);
+
+    printf("Hangi numaradan önce eklemek istiyorsun");
+    scanf("%d",&stdno);
+
+
+    p=head;
+    if(p->number==stdno){
+            newnode->next=p;
+            head=newnode;
+    }
+
+    else{
+        while (p->next !=NULL && p->number != stdno){
+            q=p;
+            p=p->next;
+        }
+        if(p->number==stdno){
+            q->next=newnode;
+            newnode->next=p;
+        }
+        else if(p->next==NULL){
+            p->next=newnode;
+            newnode->next=NULL;
+        }
+    }
+    return head;
+
+}
+node1 *delete(node1*head){
+    int k;
+    node1 *p,*q;
+    printf("Silmek istediğiniz no girin :");
+    scanf("%d",&k);
+
+    p=head;
+    if(p->number==k){
+        head=p->next;
+        free(p);
+    }
+    else
+    {
+        while (p->next!=NULL && p->number!=k){
+            q=p;
+            p=p->next;
+        }
+        if(p->number==k){
+            q->next=p->next;
+            free(p);
+        }
+        else if(p->next == NULL){
+            printf("silinicek elemean yok");
+        }
+    }
+    return head;
+}
+
+
+int main(){
+    int secim;
+    node1 *head;
+    printf("Liste işlemleri 1-liste oluştur 2-listeyi gez 3-ekleme 4-Eleman silme 5-Çıkış \n");
+    while (1){
+        printf("secim :\n");
+        scanf("%d",&secim);
+        switch (secim) {
+            case 1:
+                head=createList();
+                break;
+            case 2:
+                traverse(head);
+                break;
+            case 3:
+                adnode(head);
+
+                break;
+            case 4:
+                delete(head);
+                break;
+            case 5:
+                exit(0);
+        }
+    }
+
+}
