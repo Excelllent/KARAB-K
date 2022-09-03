@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include "string.h"
+
+struct person{
+    char adi[21];
+    struct person*next;
+};
+typedef struct person node;
+node *head,*temp,*yeni,*silinecek;
+
+node * ara(char *aranan){
+    node *p;
+    p=head;
+    temp=head;
+    while (p->next!=NULL){
+        p=p->next;
+        if(strcmp(p->adi,aranan) == 0)break;
+        temp=p;
+    }
+}
+
+node *ekle(char *s){
+    yeni=(node*) malloc(sizeof(node));
+    strcpy(yeni->adi,s);
+    ara(yeni->adi);
+    yeni->next=temp->next;
+    temp->next=yeni;
+}
+
+node* sil (char *s){
+    ara(s);
+    silinecek=temp->next;
+    temp->next=silinecek->next;
+
+    free(silinecek);
+}
+
+node *enuzun(){
+    node *p,*enuzun1;
+    p=head;
+    p=p->next;
+    enuzun1=p;
+    while (p!=NULL){
+        if(strlen(p->adi) >= strlen(enuzun1->adi)){
+            enuzun1=p;
+        }
+        p=p->next;
+    }
+    printf("\nEn uzun: %s \n",enuzun1->adi);
+    getchar();
+}
+node *traverse(node*head){
+    node *p;
+    p=head;
+
+    while (p !=NULL){
+        printf("%s",p->adi);
+        p=p->next;
+    }
+}
+
+int main() {
+    int sec;
+    char s[21];
+    head=(node *) malloc(sizeof(node));
+    head->next=NULL;
+    do{
+        system("cls");
+        printf("\n1-Ekle\n2-Sil\n3-En uzun isim\n4 -cikis\nSec:");
+        scanf("%d",&sec);
+
+        switch (sec) {
+            case 1:
+                printf("\nAdi:");
+                scanf("%s",s);
+                ekle(s);
+                traverse(head);
+                break;
+            case 2:
+                printf("\nAdi");
+                scanf("%s",&s);
+                sil(s);
+                break;
+            case 3:
+                enuzun();
+                break;
+            case 4:
+                traverse(head);
+                exit(0);
+        }
+    } while (1);
+
+}
