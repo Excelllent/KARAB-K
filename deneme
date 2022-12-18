@@ -1,0 +1,155 @@
+int Search(int key) 
+
+{ 
+
+    int low = 0; 
+
+    int high = rows - 1; 
+
+    int mid; 
+
+    int comparisons = 0;  // sayaç değişkeni 
+
+  
+
+    while (low <= high) 
+
+    { 
+
+        mid = (low + high) / 2; 
+
+        comparisons++;  // her bir erişimde sayaç bir arttırılır 
+
+  
+
+        if (key == table[mid][0]) 
+
+        { 
+
+            cout << "Key found after " << comparisons << " comparisons." << endl; 
+
+            return mid; 
+
+        } 
+
+        else if (key < table[mid][0]) 
+
+            high = mid - 1; 
+
+        else 
+
+            low = mid + 1; 
+
+    } 
+
+  
+
+    cout << "Key not found after " << comparisons << " comparisons." << endl; 
+
+    return -1; 
+
+} 
+
+  
+
+int main() 
+
+{ 
+
+    int key; 
+
+  
+
+    // Search(key=30) 
+
+    key = 30; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=107) 
+
+    key = 107; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=51) 
+
+    key = 51; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=93) 
+
+    key = 93; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=162) 
+
+    key = 162; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=123) 
+
+    key = 123; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=111) 
+
+    key = 111; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=134) 
+
+    key = 134; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    // Search(key=300) 
+
+    key = 300; 
+
+    cout << "Searching for key " << key << ": "; 
+
+    Search(key); 
+
+  
+
+    return 0; 
+
+} 
